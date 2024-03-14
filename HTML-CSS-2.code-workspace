@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../Day01"
+		},
+		{
+			"path": "../Day02"
+		},
+		{
+			"path": "../Day03"
+		}
+	],
+	"settings": {}
+}
