@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상 선택자</title>
+    <style>
+        h1{
+            font-size: 2.5rem;
+            color: #25a9bd;
+        }
+        section {
+            padding: 10px;
+            border: 5px solid orange;
+        }
+
+        /* :first-of-type - 첫 요소를 선택 */
+        section:first-of-type { color: red;}
+
+        /*  : last-of-type - 마지막 요소를 선택 */
+        /* ::first-letter - 첫 글자를 선택 */ 
+        section:last-of-type::first-letter {
+            font-size: 2.4em;
+            float: left;
+            padding: 0 2px;
+            margin: -1px 3px 0 0;
+            font-weight: bold;
+            color: yellowgreen;
+        }
+
+        section em {
+            display: block;
+            text-align: center;
+            padding: 15px;
+            position: relative;
+            font-style: normal;
+            font-weight: normal;
+        }
+
+        /* :before - 요소가 시작되기 전을 선택 */
+        section em::before {
+            content: "\!";
+            padding-right: 0.5em;
+            color: red;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        /* :after - 요소가 끝난 다음을 선택 */
+        section em::after {
+            content: "\!";
+            padding-left: 0.5em;
+            color: red;
+            font-weight: bold;
+        }
+
+        /* :enabled - 활성화된 태그를 선택 */
+        input:enabled { background-color: aquamarine;}
+        /* :disabled - 활성화된 태그를 선택 */
+        input:disabled { background-color: grey;}
+        input::placeholder { color: white;}
+    </style>
+</head>
+<body>
+    <h1>가상 선택자</h1>
+    <section>
+        국회는 헌법개정안이 공고된 날로부터 60일 이내에 의결하여야 하며, 국회의 의결은 재적의원 3분의 2 이상의 찬성을 얻어야 한다. 대통령은 국무총리·국무위원·행정각부의 장 기타 법률이 정하는 공사의 직을 겸할 수 없다. 제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다. 법률이 헌법에 위반되는 여부가 재판의 전제가 된 경우에는 법원은 헌법재판소에 제청하여 그 심판에 의하여 재판한다.
+    </section>
+    <section>
+        <em>피할 수 없으면 즐겨라.</em>
+        국회는 헌법개정안이 공고된 날로부터 60일 이내에 의결하여야 하며, 국회의 의결은 재적의원 3분의 2 이상의 찬성을 얻어야 한다. 대통령은 국무총리·국무위원·행정각부의 장 기타 법률이 정하는 공사의 직을 겸할 수 없다. 제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다. 법률이 헌법에 위반되는 여부가 재판의 전제가 된 경우에는 법원은 헌법재판소에 제청하여 그 심판에 의하여 재판한다.
+    </section>
+    <section>
+        국회는 헌법개정안이 공고된 날로부터 60일 이내에 의결하여야 하며, 국회의 의결은 재적의원 3분의 2 이상의 찬성을 얻어야 한다. 대통령은 국무총리·국무위원·행정각부의 장 기타 법률이 정하는 공사의 직을 겸할 수 없다. 제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다. 법률이 헌법에 위반되는 여부가 재판의 전제가 된 경우에는 법원은 헌법재판소에 제청하여 그 심판에 의하여 재판한다.
+    </section>
+
+    <form action="">
+        <p>
+            <label for="">이름</label>
+            <input type="text">
+        </p>
+        <p>
+            <label for="">이메일</label>
+            <input type="text" placeholder="sample@mail.com" disabled>
+        </p>
+    </form>
+</body>
+</html>
