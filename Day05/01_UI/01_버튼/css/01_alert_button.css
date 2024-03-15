@@ -1,0 +1,49 @@
+
+* { box-sizing: border-box; }
+
+.container {
+    width: 500px;
+    /* margin: 0 auto; */
+}
+
+.btn {
+    border: none;
+    padding: 14px 28px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+
+.success {background-color: goldenrod;}
+.success:hover {background-color: rgb(94, 79, 42);} /* hover : 마우스 올렸을 때 */
+.success:active {background-color: rgb(255, 183, 0);} /* active : 눌렀을 때 */
+
+.info { background-color: gold; }
+.info:hover { background-color: rgb(80, 68, 2); }
+.info:active { background-color: rgb(247, 235, 171); }
+
+.warring { background-color: wheat; }
+.warring:hover { background-color: rgb(97, 63, 0); }
+.warring:active { background-color: rgb(255, 231, 186); }
+
+.danger { background-color: bisque; }
+.danger:hover { background-color: rgb(126, 69, 0); }
+.danger:active { background-color: rgb(255, 177, 83); }
+
+.default { background-color: beige; color: black; }
+.default:hover { background-color: rgb(139, 139, 0); color: black; }
+.default:active { background-color: rgb(255, 255, 32); color: black; }
+
+.btn.lg {
+    display: block;
+    width: 100%;
+    margin: 10px 0px; /* 사이 간격 */
+}
+
+.btn {
+    border-radius: 50px;
+}
+
+
