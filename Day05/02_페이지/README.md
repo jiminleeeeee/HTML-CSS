@@ -19,6 +19,7 @@
     - 아이콘        
         - fontawesom
         https://fontawesome.com/ 
+        https://www.w3schools.com/icons/fontawesome_icons_directional.asp
 
         - material icon 
         https://fonts.google.com/icons

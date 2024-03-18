@@ -196,7 +196,7 @@ nav.mobile ul li a:hover { /* 모바일 메뉴 마우스 올렸을 때 */
 
 /* 사이드바 */
 .sidebar {
-    width: 330px;
+    width: 300px;
     height: calc(100vh - 120px);
     /* background-color: lightslategrey; */
     box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.6);
@@ -264,7 +264,7 @@ html {
 .container {
     width: var(--container-size);
     margin: 0 auto;
-    border: 1px solid hotpink;
+    /* border: 1px solid hotpink; */
     position: relative;
     
 }
@@ -273,7 +273,7 @@ section {
     width: 100%;
     min-height: 400px;
     padding: 100px 0;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
 }
 
 /* =========== 섹션01 =========== */
@@ -357,3 +357,100 @@ section {
 
 
 /* =========== 섹션02 =========== */
+
+
+/* =========== 섹션03,04 ===========*/
+.layout-detail{}
+.layout-detail .inner {
+    /* padding: 0 70px; /* 패딩 좌우로 50px */
+    display: flex; /* 영역 좌우로 */
+    justify-content: center; /* 가운데로 모으고 */
+    column-gap: 100px; /* 사이 벌리기 */
+}
+.layout-detail .inner .detail-left {}
+.layout-detail .inner .detail-left img {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.layout-detail .inner .detail-right {
+    display: flex; 
+    flex-direction: column; /* 컬럼 형식으로 */
+    justify-content: space-between; /* 버튼 아래로 */
+}
+.layout-detail .inner .detail-right .content-box {}
+.layout-detail .inner .detail-right .content-box h3 {
+    font-size: 32px;
+}
+.layout-detail .inner .detail-right .content-box p {
+    font-size: 18px;
+}
+.layout-detail .inner .detail-right .btn-box {
+    display: flex;
+    justify-content: flex-end; /* 오른쪽으로 */
+}
+
+.btn {
+    display: inline-block;
+    min-width: 120px;
+    padding: 12px 24px;
+    background-color: var(--main-color);
+    color: white;
+    border-radius: 10px; /* 테두리 곡률 */
+}
+
+/* layout-detail reverse */
+/* 좌우 영역 바꾸기 */
+.layout-detail.reverse .detail-left { order: 2; }
+.layout-detail.reverse .detail-right { order: 1; }  
+
+/* =========== 섹션03,04 ===========*/
+
+
+/* =========== 푸터 ===========*/
+footer {
+    width: 100%;
+    min-height: 480px;  /* 최소 높이 */
+    background-color: silver;
+    margin-top: 50px;   /* 상단 여백 */
+    position: relative;
+    color: white;
+}
+footer .footer-menu {
+    display: flex;
+    justify-content: center;    /* 가운데로 배치 */
+    padding-top: 50px; /* 위 여백 */
+    padding-right: 200px;
+}
+footer .footer-menu .site-map {
+    display: flex;  /* 좌우로 */
+    column-gap: 100px;  /* 사이 간격 띄우기 */
+    
+}
+footer .footer-menu .site-map .item {}
+footer .footer-menu .site-map .item ul {}
+footer .footer-menu .site-map .item ul li {
+    margin: 20px 0; /* 위아래로 20px */
+}
+
+footer .footer-menu .family-site {}
+footer .footer-menu .family-site select {
+    position: relative;
+    padding: 10px 30px; /* 크기 */
+    top: 15px;  /* 위치 조정 */
+    margin-left: 400px; /* 위치 조정 */
+}
+
+footer .copy { text-align: center; padding: 50px; } /* 가운데 정렬, 간격 조절 */
+footer .copy p {}
+
+/* =========== 푸터 ===========*/
+
+
+
+
+
+
+
+
