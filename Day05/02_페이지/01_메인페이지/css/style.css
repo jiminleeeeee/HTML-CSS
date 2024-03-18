@@ -1,0 +1,456 @@
+/* reset */
+* { margin: 0; padding: 0; box-sizing: border-box;}
+
+a { text-decoration: none; color: black;}
+ul { list-style-type: none;} /* 마커 없애기 */
+
+
+/* 헤더 */
+header {
+    width: 100%;
+    /* border: 1px solid black; */
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6);
+}
+
+/* util */
+.util {
+    height: 40px;
+    padding: 10px;
+    background-color: silver;
+    /* flex 적용 */
+    display: flex;
+    justify-content: flex-end;     /* 오른쪽으로 배치 */
+    align-items: center;    /* 아이템을 가운데로 배치 */
+}
+
+.util .util-menu { 
+    display: flex;  /* 행방향 배치 */
+    column-gap: 14px;
+    margin: 0 15px; /* 오른쪽 마진 */
+ } 
+.util .util-menu li {
+    /* display: inline-block;  /* 나란히 배치 */ 
+    /* margin: 0 14px; */
+}
+
+/* menu */
+.menu {
+    position: relative;
+    height: 80px;
+    /* flex 적용 */
+    display: flex;
+    justify-content: space-between; /* 간격 벌려주기 */
+    align-items: center;
+}
+
+/* menu - left */
+.menu .menu-left { /* 왼쪽으로 배치 */
+  /*   position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%); */
+}
+
+/* menu - center */
+.menu .menu-center { /* 가운데로 배치 */
+ /*    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); */
+}
+
+/* menu - right */
+.menu .menu-right { /* 오른쪽으로 배치 */
+ /*    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%); */
+}
+
+.menu .menu-left a,
+.menu .menu-right a {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    /* line-height: 80px; */
+    text-align: center;
+    background-color: darkgray;
+    color: white;
+    font-size: 30px; /* 아이콘 사이즈 조정 */
+}
+
+.menu .menu-left a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu .menu-center nav ul li {
+    display: inline-block;
+    height: 80px;
+    line-height: 80px;
+}
+
+.menu .menu-center nav ul li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 0 32px;
+    font-weight: bold;
+}    
+
+.menu .menu-center nav ul li a:hover { /* 메뉴에 마우스 올렸을 때 */
+    background-color: lightgray;
+    color: white;
+}
+
+/* pc */
+.mobile { display: none; }
+
+/* mobile */
+/* 반응형 */
+/* - 디바이스 가로 크기 960px 이하인 경우 */
+@media screen and (max-width: 960px) {
+    .pc { display: none; }
+    .mobile { display: inherit; }
+}
+
+/* 모바일 스타일 */
+nav.mobile ul li { 
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-bottom: 1px solid black;
+}
+nav.mobile ul li a { 
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+}
+nav.mobile ul li a:hover { /* 모바일 메뉴 마우스 올렸을 때 */
+    background-color: darkslategray;
+    color: white;
+}
+
+/* 햄버거 메뉴 추가 */
+.bars {
+    display: inline-block;
+    position: relative;
+    height: 24px;
+    width: 32px;
+    top: 32px;
+    left: 20px;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+#bars {
+    /* display: none; */
+    position: absolute;
+}
+
+/* 체크 */
+
+#bars:checked ~ header .bars .top {
+    transform: rotate(45deg) translate(3px, -1px);
+    transition: all 0.4s;
+    transform-origin: top left;
+
+}
+#bars:checked ~ header .bars .mid {
+    /* display: none; */
+    opacity: 0;
+    transition: all 0.4s;
+
+}
+#bars:checked ~ header .bars .bottom {
+    transform: rotate(-45deg) translate(-1px, 3px);
+    transition: all 0.4s;
+    transform-origin: top left;
+}
+
+.bar {
+    display: inline-block;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    transition: all 0.4s;
+    opacity: 1;
+}
+
+.bar.top {
+    top: 0;
+    left: 0;
+}
+.bar.mid {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+.bar.bottom {
+    bottom: 0;
+    left: 0;
+}
+
+/* 사이드바 */
+.sidebar {
+    width: 300px;
+    height: calc(100vh - 120px);
+    /* background-color: lightslategrey; */
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.6);
+    position: fixed;    /* 오른쪽 배치 */
+    right: -335px;
+    transition: all 0.5s;
+}
+
+#bars:checked ~ .sidebar {
+    right: 0;
+}
+
+.sidebar .sidemenu {
+    /* padding: 20px; */
+}
+
+.sidebar .sidemenu li {
+    border-bottom: 1px solid black;
+}
+
+.sidebar .sidemenu li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+}
+
+.sidebar .sidemenu li a:hover {
+    background-color: darkgray;
+}
+
+.sidebar .sidemenu li h3 { font-size: 20px; }
+
+.sidebar .sidemenu li p { font-size: 12px; }
+
+/* 플로팅 버튼 */
+.floating {
+    position: fixed;
+    right: 40px;
+    bottom: 20px;
+    /* background-color: orange; */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.floating a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    line-height: 47px;
+    font-size: 30px;
+    color: white;
+    border-radius: 50%;
+    background-color: grey;
+}
+.floating i { color: white; }
+
+html {
+    /* 스크롤을 부드럽게 이동 */
+    scroll-behavior: smooth;
+}
+
+/* 메인 페이지 */
+.container {
+    width: var(--container-size);
+    margin: 0 auto;
+    /* border: 1px solid hotpink; */
+    position: relative;
+    
+}
+
+section {
+    width: 100%;
+    min-height: 400px;
+    padding: 100px 0;
+    /* border: 1px solid blue; */
+}
+
+/* =========== 섹션01 =========== */
+#section1 {
+    position: relative;
+    overflow: hidden;
+    height: 600px;
+    padding-top: 0;
+}
+
+/* 가로슬라이드 */
+.slide {
+    position: absolute;
+    width: calc(var(--container-size) * 3);
+    animation-name: slide;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+}
+
+
+.slide img {
+    width: var(--container-size);
+    height: 600px;
+    float: left;
+}
+
+@keyframes slide {
+    33.333% {
+        left: 0;
+     }
+    66.666% { 
+        left: calc(-800px * 1);
+    }
+    100% { 
+        left: calc(-800px * 2);
+    }
+
+}
+
+/* =========== 섹션01 =========== */
+
+/* =========== 섹션02 =========== */
+#section2 {}
+
+.card-box {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card {
+    width: 100%;
+    max-width: 300px;
+    height: 450px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.6);
+    overflow: hidden; /* 넘친 이미지 정리 */
+}
+
+.card .card-title {
+     text-align: center; 
+     font-size: var(--text-title);
+     margin-top: 10px;
+}
+.card .card-content {
+    font-size: var(--text-normal);
+    padding: 10px 20px 40px;
+}
+.card .card-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* icon size up */
+.card .card-bottom i {
+     font-size: 30px; 
+     color: var(--sub-color);
+}
+
+
+/* =========== 섹션02 =========== */
+
+
+/* =========== 섹션03,04 ===========*/
+.layout-detail{}
+.layout-detail .inner {
+    /* padding: 0 70px; /* 패딩 좌우로 50px */
+    display: flex; /* 영역 좌우로 */
+    justify-content: center; /* 가운데로 모으고 */
+    column-gap: 100px; /* 사이 벌리기 */
+}
+.layout-detail .inner .detail-left {}
+.layout-detail .inner .detail-left img {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.layout-detail .inner .detail-right {
+    display: flex; 
+    flex-direction: column; /* 컬럼 형식으로 */
+    justify-content: space-between; /* 버튼 아래로 */
+}
+.layout-detail .inner .detail-right .content-box {}
+.layout-detail .inner .detail-right .content-box h3 {
+    font-size: 32px;
+}
+.layout-detail .inner .detail-right .content-box p {
+    font-size: 18px;
+}
+.layout-detail .inner .detail-right .btn-box {
+    display: flex;
+    justify-content: flex-end; /* 오른쪽으로 */
+}
+
+.btn {
+    display: inline-block;
+    min-width: 120px;
+    padding: 12px 24px;
+    background-color: var(--main-color);
+    color: white;
+    border-radius: 10px; /* 테두리 곡률 */
+}
+
+/* layout-detail reverse */
+/* 좌우 영역 바꾸기 */
+.layout-detail.reverse .detail-left { order: 2; }
+.layout-detail.reverse .detail-right { order: 1; }  
+
+/* =========== 섹션03,04 ===========*/
+
+
+/* =========== 푸터 ===========*/
+footer {
+    width: 100%;
+    min-height: 480px;  /* 최소 높이 */
+    background-color: silver;
+    margin-top: 50px;   /* 상단 여백 */
+    position: relative;
+    color: white;
+}
+footer .footer-menu {
+    display: flex;
+    justify-content: center;    /* 가운데로 배치 */
+    padding-top: 50px; /* 위 여백 */
+    padding-right: 200px;
+}
+footer .footer-menu .site-map {
+    display: flex;  /* 좌우로 */
+    column-gap: 100px;  /* 사이 간격 띄우기 */
+    
+}
+footer .footer-menu .site-map .item {}
+footer .footer-menu .site-map .item ul {}
+footer .footer-menu .site-map .item ul li {
+    margin: 20px 0; /* 위아래로 20px */
+}
+
+footer .footer-menu .family-site {}
+footer .footer-menu .family-site select {
+    position: relative;
+    padding: 10px 30px; /* 크기 */
+    top: 15px;  /* 위치 조정 */
+    margin-left: 400px; /* 위치 조정 */
+}
+
+footer .copy { text-align: center; padding: 50px; } /* 가운데 정렬, 간격 조절 */
+footer .copy p {}
+
+/* =========== 푸터 ===========*/
+
+
+
+
+
+
+
+
