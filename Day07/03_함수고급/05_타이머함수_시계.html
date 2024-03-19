@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타이머 함수 - 시계</title>
+    <script>
+        /* 시계 만들기 */
+        setInterval(() => {
+            let timer = new Date()
+            let h = timer.getHours()    /* 현재 시간 가져오기 */
+            let m = timer.getMinutes()  /* 현재 분 가져오기 */
+            let s = timer.getSeconds()  /* 현재 초 가져오기 */
+            let time = `${h} : ${m} : ${s}`
+
+            document.getElementById('time').innerHTML = time
+            // document.getElementById() : id로 html 요소를 가져오는 함수
+            // innerHTML                 : html 요소의 컨텐츠
+        }, 1000);   /* 1초 지정 */
+
+    </script>
+</head>
+<body>
+    <h1 id="time"></h1>
+</body>
+</html>
