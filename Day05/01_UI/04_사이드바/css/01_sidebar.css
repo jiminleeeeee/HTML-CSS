@@ -145,7 +145,7 @@ nav.mobile ul li a:hover { /* 모바일 메뉴 마우스 올렸을 때 */
 }
 
 #bars {
-    /* display: none; */
+    display: none;
     position: absolute;
 }
 
