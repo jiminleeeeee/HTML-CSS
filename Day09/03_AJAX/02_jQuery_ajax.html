@@ -118,14 +118,14 @@
 
         // 게시글 조회 요청
         function getBoard() {
-            let boardNo = $('#boardNo').val()
+            let boardNo = $('#boardNo').val()   /* 게시글 번호 가져오기 */
             let url = `http://192.168.30.119:8080/api/board/${boardNo}`
 
             // jQuery 로 AJAX 요청
             $.ajax({
                 type            : 'GET',                  // 요청 메소드
                 url             : url,                    // 요청 URL
-                data            : '',                     // 요청 데이터
+                data            : '',                     // 요청 데이터 (있을 때 넣어주기)
                 contentType     : 'application/json',     // 요청 데이터 타입
                 dataType        : 'html',                 // 응답 데이터 타입
                 // 요청 성공 
@@ -240,7 +240,7 @@
                     // response : 응답 데이터
                     // status   : 응답 상태
                     alert(response)
-                    getList()
+                    getList()   /* 데이터 목록 조회 */
                 },
                 // 에러
                 error           : function(xhr, status) {
